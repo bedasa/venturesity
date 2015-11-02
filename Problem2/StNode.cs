@@ -121,6 +121,10 @@ namespace Problem2
 
         private void ReArrange()
         {
+            if (Children.Count > 0)
+            {
+                _children.ForEach(x => x.ReArrange());
+            }
             Nodeid = GenerateNodeId();
 
             if (Parent != null) Range = Parent.Range + 1;
